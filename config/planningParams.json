@@ -1,0 +1,106 @@
+{
+    "bbox_offset" : 0.01,
+    "pallet_frame_id" : "p6ppallet",
+    "pallet_size" :
+    {
+        "length" : 2.28,
+        "width"  : 3.00,
+        "height" : 1.8
+    },
+    "pallet_center_translation" :
+    {
+        "x" : 2.34, //2.264
+        "y" : 1.645, //1.665
+        "z" : 0.050
+    },
+    "hap_params" :
+    {
+        "holding_area" : 3,
+        "percentage_area" : 0.6,
+        "box_gap":0.4,
+        "ha11" :
+        {
+            "x" : 0.0,
+            "y" : 3.0
+        },
+        "ha12" :
+        {
+            "x" : 1.6,
+            "y" : 4.6
+        },
+        "ha21" :
+        {
+            "x" : -0.25,
+            "y" : 3.4
+        },
+        "ha22" :
+        {
+            "x" : 0.95,
+            "y" : 3.4
+        }
+    },
+    "map_params" :
+    {
+        "ma11" :
+        {
+            "x" : -8.0,
+            "y" : -4.0
+        },
+        "ma12" : {
+            "x" : -5.0,
+            "y" : 10.0
+        }
+    },
+    "tool_params":
+    {
+        "vacuum":
+        {
+            "length": 0.65,
+            "width":  0.65,
+            "height": 0.45013, //0.09313+0.382-0.025
+            "min_clearance": 0.2
+        },
+        "offset":
+        {
+            "length_2": 0.29, //0.260
+            "length_1": 0.183,
+            "width_2":  0.40,  //0.375
+            "width_1":  0.025, 
+            "height": 0.54313, //0.09313+0.51-0.025-0.035
+            "min_clearance": 0.2
+        },
+        "foam":
+        {
+            "length_2": 0.425, //0.413
+            "length_1": 0.215,  //0.227
+            "height": 0.46613, //0.09313+0.398-0.025
+            "offset_1": 0.47,  //0.473
+            "offset_2": 0.32, //0.327
+            "min_clearance": 0.2
+        },
+        "cranefork":
+        {
+            "length": 1.06,
+            "width1": 0.46,
+            "width2": 0.98,
+            "height": 1.435,  //0.09313+0.134=1.433
+            "grasp_height_floor":0.07,
+            "grasp_z_floor":1.503,
+            "pallet_height":0.1,
+            "min_clearance": 0.2
+        },
+        "toochange-master":
+        {
+            "height": 0.09313
+        }
+    },
+    "robot_joint_limits":
+    {
+        "x_min": -0.15,
+        "x_max": 3.5,
+        "y_min": 0.1,
+        "y_max": 5.2,
+        "z_min": 0.7,
+        "z_max": 3.9
+    }
+}

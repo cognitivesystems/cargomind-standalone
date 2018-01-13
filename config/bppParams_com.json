@@ -1,0 +1,20 @@
+{
+	"W_MASS" : 0.6,
+	"W_VOL" : 0.3,
+        "W_MASSVOL" : 0.6,
+        "W_COM" : 3.0,
+	"HELT_RATE" : 0.9,
+	"W_SUPPORTED" : 0.1,
+	"W_CONTACT" : 0.3,
+	"NEIGHBOUR_CONSTANT" : 0.2,
+	"W_ASSIGNMENT" : 0.4,
+	"W_PLACE_NEAR" : 0.0,
+	"BIN_HEIGHT" : 0.0,
+	"MIN_BOX_SIZE" : 0.3,
+        "W_ITEM_IN_THE_BOTTOM_AREA" : 0.0,
+	"W_HIGH_ITEMS_GOOD_PLACED" : 0.0,
+	"GENERATE_SIMULATED_BOXES" : 0,
+	"START_WITH_ALL_EDGES_AS_FP" : 0,
+	"SEARCH_HEIGHT" : 10,
+	"SEARCH_WIDTH" : 10     
+}
