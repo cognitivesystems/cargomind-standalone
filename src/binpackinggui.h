@@ -1,7 +1,7 @@
 #ifndef BINPACKINGGUI_H
 #define BINPACKINGGUI_H
 
-//#include "sginterface.h"
+#include "sginterface.h"
 #include <gui_lib/scenerenderer3d.h>
 #include "defs.h"
 #include <thread>

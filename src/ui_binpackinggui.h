@@ -10,23 +10,25 @@
 #define UI_BINPACKINGGUI_H
 
 #include <QtCore/QVariant>
-#include <QtGui/QAction>
-#include <QtGui/QApplication>
-#include <QtGui/QButtonGroup>
-#include <QtGui/QCheckBox>
-#include <QtGui/QFrame>
-#include <QtGui/QGridLayout>
-#include <QtGui/QGroupBox>
-#include <QtGui/QHBoxLayout>
-#include <QtGui/QHeaderView>
-#include <QtGui/QLabel>
-#include <QtGui/QListWidget>
-#include <QtGui/QRadioButton>
-#include <QtGui/QSpacerItem>
-#include <QtGui/QStackedWidget>
-#include <QtGui/QToolButton>
-#include <QtGui/QVBoxLayout>
-#include <QtGui/QWidget>
+#include <QtWidgets>
+#include <QApplication>
+//#include <QtGui/QAction>
+//#include <QtGui/QApplication>
+//#include <QtGui/QButtonGroup>
+//#include <QtGui/QCheckBox>
+//#include <QtGui/QFrame>
+//#include <QtGui/QGridLayout>
+//#include <QtGui/QGroupBox>
+//#include <QtGui/QHBoxLayout>
+//#include <QtGui/QHeaderView>
+//#include <QtGui/QLabel>
+//#include <QtGui/QListWidget>
+//#include <QtGui/QRadioButton>
+//#include <QtGui/QSpacerItem>
+//#include <QtGui/QStackedWidget>
+//#include <QtGui/QToolButton>
+//#include <QtGui/QVBoxLayout>
+//#include <QtGui/QWidget>
 
 QT_BEGIN_NAMESPACE
 
@@ -1700,135 +1702,135 @@ public:
 
     void retranslateUi(QWidget *BinPackingGUI)
     {
-        BinPackingGUI->setWindowTitle(QApplication::translate("BinPackingGUI", "MainWindow", 0, QApplication::UnicodeUTF8));
-        BinPackingGUI->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "QToolButton2", 0, QApplication::UnicodeUTF8)));
+        BinPackingGUI->setWindowTitle(QApplication::translate("BinPackingGUI", "MainWindow", 0));
+        BinPackingGUI->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "QToolButton2", 0)));
         list_grp->setTitle(QString());
-        sortplannedBtn->setText(QApplication::translate("BinPackingGUI", " planned", 0, QApplication::UnicodeUTF8));
-        sortplannedBtn->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "QToolButton3", 0, QApplication::UnicodeUTF8)));
-        sortallBtn->setText(QApplication::translate("BinPackingGUI", " all boxes", 0, QApplication::UnicodeUTF8));
-        sortallBtn->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "QToolButton3", 0, QApplication::UnicodeUTF8)));
+        sortplannedBtn->setText(QApplication::translate("BinPackingGUI", " planned", 0));
+        sortplannedBtn->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "QToolButton3", 0)));
+        sortallBtn->setText(QApplication::translate("BinPackingGUI", " all boxes", 0));
+        sortallBtn->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "QToolButton3", 0)));
         sortallBtn->setProperty("QToolButton2", QVariant(QString()));
-        sortunplannedBtn->setText(QApplication::translate("BinPackingGUI", " unplanned", 0, QApplication::UnicodeUTF8));
-        sortunplannedBtn->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "QToolButton3", 0, QApplication::UnicodeUTF8)));
+        sortunplannedBtn->setText(QApplication::translate("BinPackingGUI", " unplanned", 0));
+        sortunplannedBtn->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "QToolButton3", 0)));
         sortunplannedBtn->setProperty("QToolButton2", QVariant(QString()));
-        sortall_value->setText(QApplication::translate("BinPackingGUI", "80", 0, QApplication::UnicodeUTF8));
+        sortall_value->setText(QApplication::translate("BinPackingGUI", "80", 0));
         sortall_value->setProperty("class", QVariant(QString()));
-        sortplanned_value->setText(QApplication::translate("BinPackingGUI", "70", 0, QApplication::UnicodeUTF8));
-        sortunplanned_value->setText(QApplication::translate("BinPackingGUI", "70", 0, QApplication::UnicodeUTF8));
-        stackedWidget->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "info_grp", 0, QApplication::UnicodeUTF8)));
+        sortplanned_value->setText(QApplication::translate("BinPackingGUI", "70", 0));
+        sortunplanned_value->setText(QApplication::translate("BinPackingGUI", "70", 0));
+        stackedWidget->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "info_grp", 0)));
         evaluation_grp->setTitle(QString());
-        evaluation_grp->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "info_grp", 0, QApplication::UnicodeUTF8)));
-        group_title_1->setText(QApplication::translate("BinPackingGUI", "Evaluation", 0, QApplication::UnicodeUTF8));
-        group_title_1->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "textTitle", 0, QApplication::UnicodeUTF8)));
-        volume_value->setText(QApplication::translate("BinPackingGUI", "-", 0, QApplication::UnicodeUTF8));
-        volume_value->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "textValue", 0, QApplication::UnicodeUTF8)));
-        volume_label->setText(QApplication::translate("BinPackingGUI", "volume", 0, QApplication::UnicodeUTF8));
-        volume_label->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "textLabel", 0, QApplication::UnicodeUTF8)));
-        weight_value->setText(QApplication::translate("BinPackingGUI", "-", 0, QApplication::UnicodeUTF8));
-        weight_value->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "textValue", 0, QApplication::UnicodeUTF8)));
-        weight_label->setText(QApplication::translate("BinPackingGUI", "weight (kg)", 0, QApplication::UnicodeUTF8));
-        weight_label->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "textLabel", 0, QApplication::UnicodeUTF8)));
-        quantity_value->setText(QApplication::translate("BinPackingGUI", "-", 0, QApplication::UnicodeUTF8));
-        quantity_value->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "textValue", 0, QApplication::UnicodeUTF8)));
-        quantity_label->setText(QApplication::translate("BinPackingGUI", "total quantity", 0, QApplication::UnicodeUTF8));
-        quantity_label->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "textLabel", 0, QApplication::UnicodeUTF8)));
-        fragile_value->setText(QApplication::translate("BinPackingGUI", "-", 0, QApplication::UnicodeUTF8));
-        fragile_value->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "textValue", 0, QApplication::UnicodeUTF8)));
-        fragile_label->setText(QApplication::translate("BinPackingGUI", "fragile ", 0, QApplication::UnicodeUTF8));
-        fragile_label->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "textLabel", 0, QApplication::UnicodeUTF8)));
-        dangerous_value->setText(QApplication::translate("BinPackingGUI", "-", 0, QApplication::UnicodeUTF8));
-        dangerous_value->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "textValue", 0, QApplication::UnicodeUTF8)));
-        dangerous_label->setText(QApplication::translate("BinPackingGUI", "dangerous ", 0, QApplication::UnicodeUTF8));
-        dangerous_label->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "textLabel", 0, QApplication::UnicodeUTF8)));
+        evaluation_grp->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "info_grp", 0)));
+        group_title_1->setText(QApplication::translate("BinPackingGUI", "Evaluation", 0));
+        group_title_1->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "textTitle", 0)));
+        volume_value->setText(QApplication::translate("BinPackingGUI", "-", 0));
+        volume_value->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "textValue", 0)));
+        volume_label->setText(QApplication::translate("BinPackingGUI", "volume", 0));
+        volume_label->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "textLabel", 0)));
+        weight_value->setText(QApplication::translate("BinPackingGUI", "-", 0));
+        weight_value->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "textValue", 0)));
+        weight_label->setText(QApplication::translate("BinPackingGUI", "weight (kg)", 0));
+        weight_label->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "textLabel", 0)));
+        quantity_value->setText(QApplication::translate("BinPackingGUI", "-", 0));
+        quantity_value->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "textValue", 0)));
+        quantity_label->setText(QApplication::translate("BinPackingGUI", "total quantity", 0));
+        quantity_label->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "textLabel", 0)));
+        fragile_value->setText(QApplication::translate("BinPackingGUI", "-", 0));
+        fragile_value->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "textValue", 0)));
+        fragile_label->setText(QApplication::translate("BinPackingGUI", "fragile ", 0));
+        fragile_label->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "textLabel", 0)));
+        dangerous_value->setText(QApplication::translate("BinPackingGUI", "-", 0));
+        dangerous_value->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "textValue", 0)));
+        dangerous_label->setText(QApplication::translate("BinPackingGUI", "dangerous ", 0));
+        dangerous_label->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "textLabel", 0)));
         optimization_grp->setTitle(QString());
-        optimization_grp->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "info_grp", 0, QApplication::UnicodeUTF8)));
-        radioButton_com_opt->setText(QApplication::translate("BinPackingGUI", "C.O.M", 0, QApplication::UnicodeUTF8));
-        radioButton_space_opt->setText(QApplication::translate("BinPackingGUI", "volume", 0, QApplication::UnicodeUTF8));
-        group_title->setText(QApplication::translate("BinPackingGUI", "Optimization Setting", 0, QApplication::UnicodeUTF8));
-        group_title->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "textTitle", 0, QApplication::UnicodeUTF8)));
-        radioButton_default->setText(QApplication::translate("BinPackingGUI", "default", 0, QApplication::UnicodeUTF8));
-        radioButton_mass_opt->setText(QApplication::translate("BinPackingGUI", "weight", 0, QApplication::UnicodeUTF8));
+        optimization_grp->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "info_grp", 0)));
+        radioButton_com_opt->setText(QApplication::translate("BinPackingGUI", "C.O.M", 0));
+        radioButton_space_opt->setText(QApplication::translate("BinPackingGUI", "volume", 0));
+        group_title->setText(QApplication::translate("BinPackingGUI", "Optimization Setting", 0));
+        group_title->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "textTitle", 0)));
+        radioButton_default->setText(QApplication::translate("BinPackingGUI", "default", 0));
+        radioButton_mass_opt->setText(QApplication::translate("BinPackingGUI", "weight", 0));
         boxinfo_grp->setTitle(QString());
-        boxinfo_grp->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "info_grp", 0, QApplication::UnicodeUTF8)));
-        group_title_3->setText(QApplication::translate("BinPackingGUI", "Box Details", 0, QApplication::UnicodeUTF8));
-        group_title_3->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "textTitle", 0, QApplication::UnicodeUTF8)));
-        boxID_value->setText(QApplication::translate("BinPackingGUI", "-", 0, QApplication::UnicodeUTF8));
-        boxID_value->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "textValue", 0, QApplication::UnicodeUTF8)));
-        boxID_label->setText(QApplication::translate("BinPackingGUI", "box ID", 0, QApplication::UnicodeUTF8));
-        boxID_label->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "textLabel", 0, QApplication::UnicodeUTF8)));
-        width_label->setText(QApplication::translate("BinPackingGUI", "width(m)", 0, QApplication::UnicodeUTF8));
-        width_label->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "textLabel", 0, QApplication::UnicodeUTF8)));
-        width_value->setText(QApplication::translate("BinPackingGUI", "-", 0, QApplication::UnicodeUTF8));
-        width_value->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "textValue", 0, QApplication::UnicodeUTF8)));
-        height_value->setText(QApplication::translate("BinPackingGUI", "-", 0, QApplication::UnicodeUTF8));
-        height_value->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "textValue", 0, QApplication::UnicodeUTF8)));
-        length_value->setText(QApplication::translate("BinPackingGUI", "-", 0, QApplication::UnicodeUTF8));
-        length_value->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "textValue", 0, QApplication::UnicodeUTF8)));
-        height_label->setText(QApplication::translate("BinPackingGUI", "height(m)", 0, QApplication::UnicodeUTF8));
-        height_label->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "textLabel", 0, QApplication::UnicodeUTF8)));
-        length_label->setText(QApplication::translate("BinPackingGUI", "length(m)", 0, QApplication::UnicodeUTF8));
-        length_label->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "textLabel", 0, QApplication::UnicodeUTF8)));
-        boxweight_value->setText(QApplication::translate("BinPackingGUI", "-", 0, QApplication::UnicodeUTF8));
-        boxweight_value->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "textValue", 0, QApplication::UnicodeUTF8)));
-        boxweight_label->setText(QApplication::translate("BinPackingGUI", "weight (kg)", 0, QApplication::UnicodeUTF8));
-        boxweight_label->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "textLabel", 0, QApplication::UnicodeUTF8)));
-        label_1->setText(QApplication::translate("BinPackingGUI", "-", 0, QApplication::UnicodeUTF8));
-        label_1->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "textValue", 0, QApplication::UnicodeUTF8)));
-        tags_label->setText(QApplication::translate("BinPackingGUI", "labels", 0, QApplication::UnicodeUTF8));
-        tags_label->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "textLabel", 0, QApplication::UnicodeUTF8)));
-        material_value->setText(QApplication::translate("BinPackingGUI", "-", 0, QApplication::UnicodeUTF8));
-        material_value->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "textValue", 0, QApplication::UnicodeUTF8)));
-        material_label->setText(QApplication::translate("BinPackingGUI", "material", 0, QApplication::UnicodeUTF8));
-        material_label->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "textLabel", 0, QApplication::UnicodeUTF8)));
-        tool_value->setText(QApplication::translate("BinPackingGUI", "-", 0, QApplication::UnicodeUTF8));
-        tool_value->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "textValue", 0, QApplication::UnicodeUTF8)));
-        tool_label->setText(QApplication::translate("BinPackingGUI", "tool", 0, QApplication::UnicodeUTF8));
-        tool_label->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "textLabel", 0, QApplication::UnicodeUTF8)));
-        storage_value->setText(QApplication::translate("BinPackingGUI", "-", 0, QApplication::UnicodeUTF8));
-        storage_value->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "textValue", 0, QApplication::UnicodeUTF8)));
-        storage_label->setText(QApplication::translate("BinPackingGUI", "storage", 0, QApplication::UnicodeUTF8));
-        storage_label->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "textLabel", 0, QApplication::UnicodeUTF8)));
-        support_value->setText(QApplication::translate("BinPackingGUI", "-", 0, QApplication::UnicodeUTF8));
-        support_value->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "textValue", 0, QApplication::UnicodeUTF8)));
-        checkBox_support->setText(QApplication::translate("BinPackingGUI", "show", 0, QApplication::UnicodeUTF8));
-        support_label->setText(QApplication::translate("BinPackingGUI", "support boxes", 0, QApplication::UnicodeUTF8));
-        support_label->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "textLabel", 0, QApplication::UnicodeUTF8)));
-        closeBtn->setText(QApplication::translate("BinPackingGUI", "close", 0, QApplication::UnicodeUTF8));
-        closeBtn->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "QToolButton3", 0, QApplication::UnicodeUTF8)));
+        boxinfo_grp->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "info_grp", 0)));
+        group_title_3->setText(QApplication::translate("BinPackingGUI", "Box Details", 0));
+        group_title_3->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "textTitle", 0)));
+        boxID_value->setText(QApplication::translate("BinPackingGUI", "-", 0));
+        boxID_value->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "textValue", 0)));
+        boxID_label->setText(QApplication::translate("BinPackingGUI", "box ID", 0));
+        boxID_label->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "textLabel", 0)));
+        width_label->setText(QApplication::translate("BinPackingGUI", "width(m)", 0));
+        width_label->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "textLabel", 0)));
+        width_value->setText(QApplication::translate("BinPackingGUI", "-", 0));
+        width_value->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "textValue", 0)));
+        height_value->setText(QApplication::translate("BinPackingGUI", "-", 0));
+        height_value->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "textValue", 0)));
+        length_value->setText(QApplication::translate("BinPackingGUI", "-", 0));
+        length_value->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "textValue", 0)));
+        height_label->setText(QApplication::translate("BinPackingGUI", "height(m)", 0));
+        height_label->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "textLabel", 0)));
+        length_label->setText(QApplication::translate("BinPackingGUI", "length(m)", 0));
+        length_label->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "textLabel", 0)));
+        boxweight_value->setText(QApplication::translate("BinPackingGUI", "-", 0));
+        boxweight_value->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "textValue", 0)));
+        boxweight_label->setText(QApplication::translate("BinPackingGUI", "weight (kg)", 0));
+        boxweight_label->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "textLabel", 0)));
+        label_1->setText(QApplication::translate("BinPackingGUI", "-", 0));
+        label_1->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "textValue", 0)));
+        tags_label->setText(QApplication::translate("BinPackingGUI", "labels", 0));
+        tags_label->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "textLabel", 0)));
+        material_value->setText(QApplication::translate("BinPackingGUI", "-", 0));
+        material_value->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "textValue", 0)));
+        material_label->setText(QApplication::translate("BinPackingGUI", "material", 0));
+        material_label->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "textLabel", 0)));
+        tool_value->setText(QApplication::translate("BinPackingGUI", "-", 0));
+        tool_value->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "textValue", 0)));
+        tool_label->setText(QApplication::translate("BinPackingGUI", "tool", 0));
+        tool_label->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "textLabel", 0)));
+        storage_value->setText(QApplication::translate("BinPackingGUI", "-", 0));
+        storage_value->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "textValue", 0)));
+        storage_label->setText(QApplication::translate("BinPackingGUI", "storage", 0));
+        storage_label->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "textLabel", 0)));
+        support_value->setText(QApplication::translate("BinPackingGUI", "-", 0));
+        support_value->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "textValue", 0)));
+        checkBox_support->setText(QApplication::translate("BinPackingGUI", "show", 0));
+        support_label->setText(QApplication::translate("BinPackingGUI", "support boxes", 0));
+        support_label->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "textLabel", 0)));
+        closeBtn->setText(QApplication::translate("BinPackingGUI", "close", 0));
+        closeBtn->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "QToolButton3", 0)));
         logo->setText(QString());
         scene_grp->setTitle(QString());
-        label_2->setText(QApplication::translate("BinPackingGUI", "display :", 0, QApplication::UnicodeUTF8));
-        volumeviewBtn->setText(QApplication::translate("BinPackingGUI", "pallet volume", 0, QApplication::UnicodeUTF8));
-        plannedviewBtn->setText(QApplication::translate("BinPackingGUI", "planned", 0, QApplication::UnicodeUTF8));
-        comviewBtn->setText(QApplication::translate("BinPackingGUI", "C.O.M", 0, QApplication::UnicodeUTF8));
-        resetviewBtn->setText(QApplication::translate("BinPackingGUI", "reset view", 0, QApplication::UnicodeUTF8));
-        resetviewBtn->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "QToolButton3", 0, QApplication::UnicodeUTF8)));
-        checkbox_wooden->setText(QApplication::translate("BinPackingGUI", "wooden", 0, QApplication::UnicodeUTF8));
-        checkbox_carton->setText(QApplication::translate("BinPackingGUI", "carton", 0, QApplication::UnicodeUTF8));
-        checkbox_styrofoam->setText(QApplication::translate("BinPackingGUI", "styrofoam", 0, QApplication::UnicodeUTF8));
-        checkbox_plastic->setText(QApplication::translate("BinPackingGUI", "plastic", 0, QApplication::UnicodeUTF8));
-        checkbox_dangerous->setText(QApplication::translate("BinPackingGUI", "dangerous", 0, QApplication::UnicodeUTF8));
-        checkbox_fragile->setText(QApplication::translate("BinPackingGUI", "fragile", 0, QApplication::UnicodeUTF8));
-        checkbox_others->setText(QApplication::translate("BinPackingGUI", "others", 0, QApplication::UnicodeUTF8));
-        clearBtn->setText(QApplication::translate("BinPackingGUI", "clear filter", 0, QApplication::UnicodeUTF8));
-        clearBtn->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "QToolButton3", 0, QApplication::UnicodeUTF8)));
-        progress->setText(QApplication::translate("BinPackingGUI", "GIF", 0, QApplication::UnicodeUTF8));
+        label_2->setText(QApplication::translate("BinPackingGUI", "display :", 0));
+        volumeviewBtn->setText(QApplication::translate("BinPackingGUI", "pallet volume", 0));
+        plannedviewBtn->setText(QApplication::translate("BinPackingGUI", "planned", 0));
+        comviewBtn->setText(QApplication::translate("BinPackingGUI", "C.O.M", 0));
+        resetviewBtn->setText(QApplication::translate("BinPackingGUI", "reset view", 0));
+        resetviewBtn->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "QToolButton3", 0)));
+        checkbox_wooden->setText(QApplication::translate("BinPackingGUI", "wooden", 0));
+        checkbox_carton->setText(QApplication::translate("BinPackingGUI", "carton", 0));
+        checkbox_styrofoam->setText(QApplication::translate("BinPackingGUI", "styrofoam", 0));
+        checkbox_plastic->setText(QApplication::translate("BinPackingGUI", "plastic", 0));
+        checkbox_dangerous->setText(QApplication::translate("BinPackingGUI", "dangerous", 0));
+        checkbox_fragile->setText(QApplication::translate("BinPackingGUI", "fragile", 0));
+        checkbox_others->setText(QApplication::translate("BinPackingGUI", "others", 0));
+        clearBtn->setText(QApplication::translate("BinPackingGUI", "clear filter", 0));
+        clearBtn->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "QToolButton3", 0)));
+        progress->setText(QApplication::translate("BinPackingGUI", "GIF", 0));
         btn_grp->setTitle(QString());
-        btn_grp->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "btn_grp", 0, QApplication::UnicodeUTF8)));
-        nextBtn->setText(QApplication::translate("BinPackingGUI", "deploy", 0, QApplication::UnicodeUTF8));
-        nextBtn->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "QToolButton1", 0, QApplication::UnicodeUTF8)));
-        planBtn->setText(QApplication::translate("BinPackingGUI", "plan", 0, QApplication::UnicodeUTF8));
-        planBtn->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "QToolButton1", 0, QApplication::UnicodeUTF8)));
-        importBtn->setText(QApplication::translate("BinPackingGUI", "import", 0, QApplication::UnicodeUTF8));
-        importBtn->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "QToolButton2", 0, QApplication::UnicodeUTF8)));
-        ppGUIButton->setText(QApplication::translate("BinPackingGUI", "--->", 0, QApplication::UnicodeUTF8));
-        ppGUIButton->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "QToolButton2", 0, QApplication::UnicodeUTF8)));
-        rppButton->setText(QApplication::translate("BinPackingGUI", "remove", 0, QApplication::UnicodeUTF8));
-        rppButton->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "QToolButton2", 0, QApplication::UnicodeUTF8)));
-        saveButton->setText(QApplication::translate("BinPackingGUI", "save", 0, QApplication::UnicodeUTF8));
-        saveButton->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "QToolButton2", 0, QApplication::UnicodeUTF8)));
-        MASimulationButton->setText(QApplication::translate("BinPackingGUI", "storage", 0, QApplication::UnicodeUTF8));
-        MASimulationButton->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "QToolButton2", 0, QApplication::UnicodeUTF8)));
+        btn_grp->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "btn_grp", 0)));
+        nextBtn->setText(QApplication::translate("BinPackingGUI", "deploy", 0));
+        nextBtn->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "QToolButton1", 0)));
+        planBtn->setText(QApplication::translate("BinPackingGUI", "plan", 0));
+        planBtn->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "QToolButton1", 0)));
+        importBtn->setText(QApplication::translate("BinPackingGUI", "import", 0));
+        importBtn->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "QToolButton2", 0)));
+        ppGUIButton->setText(QApplication::translate("BinPackingGUI", "--->", 0));
+        ppGUIButton->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "QToolButton2", 0)));
+        rppButton->setText(QApplication::translate("BinPackingGUI", "remove", 0));
+        rppButton->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "QToolButton2", 0)));
+        saveButton->setText(QApplication::translate("BinPackingGUI", "save", 0));
+        saveButton->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "QToolButton2", 0)));
+        MASimulationButton->setText(QApplication::translate("BinPackingGUI", "storage", 0));
+        MASimulationButton->setProperty("class", QVariant(QApplication::translate("BinPackingGUI", "QToolButton2", 0)));
     } // retranslateUi
 
 };

@@ -7,6 +7,7 @@
 #include <eigen3/Eigen/Core>
 #include <eigen3/Eigen/Geometry>
 #include <iostream>
+#include <LinearMath/btTransform.h>
 
 using namespace std;
 
@@ -228,39 +229,50 @@ struct QueryActor{
 }
 
 namespace tf{
- inline void 	poseMsgToEigen (const geometry_msgs::Pose &m, Eigen::Affine3d &e){
 
-     e = Eigen::Translation3d(m.position.x,
-                                   m.position.y,
-                                   m.position.z) *
+typedef btQuaternion Quaternion;
+static const double QUATERNION_TOLERANCE = 0.1f;
+
+inline void 	poseMsgToEigen (const geometry_msgs::Pose &m, Eigen::Affine3d &e){
+
+    e = Eigen::Translation3d(m.position.x,
+                             m.position.y,
+                             m.position.z) *
             Eigen::Quaterniond(m.orientation.w,
                                m.orientation.x,
                                m.orientation.y,
                                m.orientation.z);
-//    std::cout << "poseMsgToEigen not yet implemented" << std::endl;
+    //    std::cout << "poseMsgToEigen not yet implemented" << std::endl;
 
-//    throw;
+    //    throw;
 }
 
- inline void 	poseEigenToMsg (const Eigen::Affine3d &e, geometry_msgs::Pose &m){
+inline void 	poseEigenToMsg (const Eigen::Affine3d &e, geometry_msgs::Pose &m){
     std::cout << "poseEigenToMsg not yet implemented" << std::endl;
     throw;
 }
 
- inline void 	pointMsgToEigen (const geometry_msgs::Point &m, Eigen::Vector3d &e){
+inline void 	pointMsgToEigen (const geometry_msgs::Point &m, Eigen::Vector3d &e){
     std::cout << "pointMsgToEigen not yet implemented" << std::endl;
     throw;
 }
 
- inline void 	pointEigenToMsg (const Eigen::Vector3d &e, geometry_msgs::Point &m){
+inline void 	pointEigenToMsg (const Eigen::Vector3d &e, geometry_msgs::Point &m){
     std::cout << "pointEigenToMsg not yet implemented" << std::endl;
     throw;
 }
 
-//void quaternionMsgToTF (const geometry_msgs::Quaternion &msg, Quaternion &bt){
-//    std::cout << "quaternionMsgToTF not yet implemented" << std::endl;
-//    throw;
-//}
+inline void quaternionMsgToTF (const geometry_msgs::Quaternion &msg, Quaternion &bt){
+
+    bt = Quaternion(msg.x, msg.y, msg.z, msg.w);
+    if (fabs(bt.length2() - 1 ) > QUATERNION_TOLERANCE)
+    {
+        std::cout<<"MSG to TF: Quaternion Not Properly Normalized"<<std::endl;
+        bt.normalize();
+    }
+    //    std::cout << "quaternionMsgToTF not yet implemented" << std::endl;
+    //    throw;
+}
 };
 
 namespace gui_msgs{

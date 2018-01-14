@@ -339,6 +339,7 @@ void BinPackingGUI::on_planBtn_clicked()
 //    ui->progressBar->setValue(0);
     QApplication::processEvents(); //process all events now!
 
+    std::cout << "Plan button clicked" << std::endl;
     emit requestBinPackingPlan(bpp_opt_goal_);
 }
 

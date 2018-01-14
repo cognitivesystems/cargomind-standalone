@@ -10,21 +10,27 @@ set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_AUTOUIC ON)
 
 set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/modules)
+#set(CMAKE_PREFIX_PATH "/opt/Qt5")
+
+set(CMAKE_INCLUDE_CURRENT_DIR ON)
+set(CMAKE_AUTOMOC ON)
+
+find_package(Qt5Widgets)
 
 ## System dependencies are found with CMake's conventions
 #find_package(Boost REQUIRED COMPONENTS system)
 
 
-find_package(Qt4 REQUIRED COMPONENTS QtCore QtGui QtOpenGL QtNetwork)
-set(QT_USE_QTMAIN TRUE)
-include(${QT_USE_FILE})
+#find_package(Qt4 REQUIRED COMPONENTS QtCore QtGui QtOpenGL QtNetwork)
+#set(QT_USE_QTMAIN TRUE)
+#include(${QT_USE_FILE})
 find_package(Coin)
 find_package(OpenGL)
 find_package(SoQt)
 find_package(TinyXML REQUIRED)
 
 include_directories(
-  ${QT_INCLUDES}
+#  ${QT_INCLUDES}
   ${COIN_INCLUDE_DIRS}
   ${OPENGL_INCLUDE_DIR}
   ${SOQT_INCLUDE_DIRS}
@@ -38,31 +44,32 @@ include_directories(
 
 LINK_DIRECTORIES(
   ${CMAKE_CURRENT_SOURCE_DIR}/deps/lib
-
+  /usr/local/lib
+  #/opt/Qt5/lib
 )
 
-include("${CMAKE_SOURCE_DIR}/cmake/qt_wrap_ui.cmake")
+#include("${CMAKE_SOURCE_DIR}/cmake/qt_wrap_ui.cmake")
 
-QT4_WRAP_UI_LOCAL(MOC_UI_SRCS
- src/mainwindow.ui
- src/binpackinggui.ui
- src/listitem.ui
-)
+#QT4_WRAP_UI_LOCAL(MOC_UI_SRCS
+# src/mainwindow.ui
+# src/binpackinggui.ui
+# src/listitem.ui
+#)
 
-QT4_WRAP_CPP(MOC_SRCS
- src/mainwindow.h
- src/binpackinggui.h
- src/myslider.h
-# src/defs.h
- src/listitem.h
-# src/BppROS.h
- src/sginterface.h
- src/WorldStateGenerator.h
-# src/wsg_utils.h
-# src/SGJSONParser.h
-# src/BlobStoreHelper.h
-# src/bullet/Actor.h
-)
+#QT4_WRAP_CPP(MOC_SRCS
+# src/mainwindow.h
+# src/binpackinggui.h
+# src/myslider.h
+## src/defs.h
+# src/listitem.h
+## src/BppROS.h
+# src/sginterface.h
+# src/WorldStateGenerator.h
+## src/wsg_utils.h
+## src/SGJSONParser.h
+## src/BlobStoreHelper.h
+## src/bullet/Actor.h
+#)
 
 SET (HDRS
  src/mainwindow.h
@@ -106,7 +113,8 @@ add_executable(system_gui_node ${MOC_SRCS} ${MOC_UI_SRCS} ${HDRS} ${SRCS} ${bpa_
 ## Specify libraries to link a library or executable target against
 target_link_libraries(system_gui_node
   ${catkin_LIBRARIES}
-  ${QT_LIBRARIES}
+#  ${QT_LIBRARIES}
+  Qt5::Widgets
   ${COIN_LIBRARIES}
   ${OPENGL_LIBRARIES}
   ${SOQT_LIBRARIES}

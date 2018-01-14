@@ -221,12 +221,20 @@ std::vector<bpa::Box> BppROS::actorsToBoxes(const std::vector<bpp_actor::Actor>&
 bpa::Box BppROS::actorToBox(const bpp_actor::Actor& actor)
 {
     Eigen::Vector3d box_bbox;
-    geometry_msgs::Quaternion q; Eigen::Vector3d eu;
+    //tf::Quaternion q;
+    Eigen::Vector3d eu;
     //********************************************* REIMPLEMENT ************************************************
 
     /*    tf::quaternionMsgToTF(actor.desiredPoseVec[0].orientation, q);
     tf::Matrix3x3(q).getRPY(eu(0), eu(1), eu(2))*/;
     //*********************************************************************************************************
+//    Eigen::Quaternion q(actor.desiredPoseVec[0].orientation.w, actor.desiredPoseVec[0].orientation.x,actor.desiredPoseVec[0].orientation.y, actor.desiredPoseVec[0].orientation.z);
+
+//    tf::quaternionMsgToTF(actor.desiredPoseVec[0].orientation, q);
+//    eu = q.toRotationMatrix().eulerAngles(0,1,2);
+
+    QQuaternion q(actor.desiredPoseVec[0].orientation.w, actor.desiredPoseVec[0].orientation.x,actor.desiredPoseVec[0].orientation.y, actor.desiredPoseVec[0].orientation.z);
+
 
 
 
@@ -388,8 +396,8 @@ bpp_actor::Actor BppROS::boxToActor(const bpa::Box& box)
 
     //********************************************* REIMPLEMENT ************************************************
 
-//    tf::Quaternion _sim_world_orientation = tf::createQuaternionFromYaw(_sim_world_yaw);
-//    tf::Quaternion _final_orientation =  _sim_world_orientation;
+    //    tf::Quaternion _sim_world_orientation = tf::createQuaternionFromYaw(_sim_world_yaw);
+    //    tf::Quaternion _final_orientation =  _sim_world_orientation;
 
     //*********************************************************************************************************
 

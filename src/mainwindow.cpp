@@ -10,6 +10,9 @@ MainWindow::MainWindow(QWidget *parent, Qt::WindowFlags f) :
 
     ui->setupUi(this);
 
+    sg_interface_=new sginf::SGInterface();
+    sg_interface_->start();
+
     this->timer_id_ = startTimer(1);
 
     this->ui->stackedWidget->setCurrentIndex(0); // always select the first page of the stacked widget in the beginning
@@ -48,6 +51,10 @@ void MainWindow::closeEvent(QCloseEvent *event)
     std::cout << "Closing main gui" << std::endl;
     close();
 
+    sg_interface_->stopThread();
+    sg_interface_->deleteLater();
+
+    delete sg_interface_;
     killTimer(this->timer_id_);
 }
 

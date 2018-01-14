@@ -29,6 +29,7 @@ void SGInterface::fetchNewBoxPlanPriv(const std::string &opt_name)
 
 void SGInterface::fetchNewBoxPlan(const std::string &opt_name)
 {
+    std::cout << "+++++++++++++++++++++++++ fetchNewBoxPlan +++++++++++++++++++++++++++++++" << std::endl;
     gui_msgs::WSGUIStateFeedback gui_state_feedback;
     gui_state_feedback.current_state = "doBinPackingPlanning";
 
