@@ -90,6 +90,7 @@ std::vector<bpp_actor::Actor> BppROS::binPackingBoxes()
     //    std::vector<bpp_actor::Actor> holding_area_actors = wsgtools::WSGClientHelper::getActorsInZone("holding_area");
 
     bpp_actor::QueryActor query;
+    query.all=false;
     query.zone="pallet";
     std::vector<bpp_actor::Actor> pallet_actors;
     MainWindow::binPackingGUIInstance()->ws_.get_actor_callback(query, pallet_actors);
@@ -120,6 +121,7 @@ std::vector<bpp_actor::Actor> BppROS::binPackingBoxes()
 
     // get current fps for bin
     bpp_actor::QueryActor query1;
+    query1.all=false;
     query1.uuid="p6ppallet";
     std::vector<bpp_actor::Actor > actors;
     MainWindow::binPackingGUIInstance()->ws_.get_actor_callback(query1, actors);
@@ -228,20 +230,22 @@ bpa::Box BppROS::actorToBox(const bpp_actor::Actor& actor)
     /*    tf::quaternionMsgToTF(actor.desiredPoseVec[0].orientation, q);
     tf::Matrix3x3(q).getRPY(eu(0), eu(1), eu(2))*/;
     //*********************************************************************************************************
-//    Eigen::Quaternion q(actor.desiredPoseVec[0].orientation.w, actor.desiredPoseVec[0].orientation.x,actor.desiredPoseVec[0].orientation.y, actor.desiredPoseVec[0].orientation.z);
+    //    Eigen::Quaternion q(actor.desiredPoseVec[0].orientation.w, actor.desiredPoseVec[0].orientation.x,actor.desiredPoseVec[0].orientation.y, actor.desiredPoseVec[0].orientation.z);
 
-//    tf::quaternionMsgToTF(actor.desiredPoseVec[0].orientation, q);
-//    eu = q.toRotationMatrix().eulerAngles(0,1,2);
+    //    tf::quaternionMsgToTF(actor.desiredPoseVec[0].orientation, q);
+    //    eu = q.toRotationMatrix().eulerAngles(0,1,2);
 
     QQuaternion q(actor.desiredPoseVec[0].orientation.w, actor.desiredPoseVec[0].orientation.x,actor.desiredPoseVec[0].orientation.y, actor.desiredPoseVec[0].orientation.z);
+    float pitch, yaw, roll;
+    q.getEulerAngles(&pitch, &yaw, &roll);
+    eu(0)=roll;eu(1)=pitch;eu(2)=yaw;
 
 
 
+    //    std::cout << "re implement the commeneted conde in the file below " << std::endl;
 
-    std::cout << "re implement the commeneted conde in the file below " << std::endl;
-
-    std::cout << __FILE__ << " " << __LINE__ << std::endl;
-    throw;
+    //    std::cout << __FILE__ << " " << __LINE__ << std::endl;
+    //    throw;
 
     if( floatEqual(std::fabs(eu(2)), M_PI_2) && actor.zone == "pallet") //box is the rotatedBox
         box_bbox << actor.bbox.y, actor.bbox.x, actor.bbox.z;
@@ -394,17 +398,22 @@ bpp_actor::Actor BppROS::boxToActor(const bpa::Box& box)
     double _sim_world_yaw = (box.is_rotated == true) ? M_PI_2 : 0.0;
 
 
-    //********************************************* REIMPLEMENT ************************************************
 
-    //    tf::Quaternion _sim_world_orientation = tf::createQuaternionFromYaw(_sim_world_yaw);
-    //    tf::Quaternion _final_orientation =  _sim_world_orientation;
+//    tf::Quaternion _sim_world_orientation = tf::createQuaternionFromYaw(_sim_world_yaw);
+//    tf::Quaternion _final_orientation =  _sim_world_orientation;
 
-    //*********************************************************************************************************
+    QQuaternion _sim_world_orientation=QQuaternion::fromEulerAngles(0,_sim_world_yaw,0);
 
-    std::cout << "re implement the commeneted conde in the file below " << std::endl;
+    tf::Quaternion _final_orientation;
+    _final_orientation.setX(_sim_world_orientation.x());
+    _final_orientation.setY(_sim_world_orientation.y());
+    _final_orientation.setZ(_sim_world_orientation.z());
+    _final_orientation.setW(_sim_world_orientation.scalar());
 
-    std::cout << __FILE__ << " " << __LINE__ << std::endl;
-    throw;
+    //    std::cout << "re implement the commeneted conde in the file below " << std::endl;
+
+    //    std::cout << __FILE__ << " " << __LINE__ << std::endl;
+    //    throw;
 
     /***************************************************************************************************
      * 2. tranformation the box pose to the base frame (actor)
@@ -435,14 +444,14 @@ bpp_actor::Actor BppROS::boxToActor(const bpa::Box& box)
 
     //********************************************* REIMPLEMENT ************************************************
 
-    //tf::quaternionTFToMsg(_final_orientation, box_pose_wrt_bpp.orientation);
+    tf::quaternionTFToMsg(_final_orientation, box_pose_wrt_bpp.orientation);
 
     //*********************************************************************************************************
 
-    std::cout << "re implement the commeneted conde in the file below " << std::endl;
+//    std::cout << "re implement the commeneted conde in the file below " << std::endl;
 
-    std::cout << __FILE__ << " " << __LINE__ << std::endl;
-    throw;
+//    std::cout << __FILE__ << " " << __LINE__ << std::endl;
+//    throw;
 
     Eigen::Affine3d box_tr_wrt_bpp, box_tr_wrt_world;
     tf::poseMsgToEigen(box_pose_wrt_bpp, box_tr_wrt_bpp);
@@ -534,6 +543,7 @@ bool BppROS::updateBinFPsToWSG(const std::vector<bpa::FittingPoint> &fitting_poi
 {
     // for pallet fitting points
     bpp_actor::QueryActor query;
+    query.all=false;
     query.uuid="p6ppallet";
 
     //    bpp_actor::Actor pallet = wsgtools::WSGClientHelper::getActorFromUUID("p6ppallet");
@@ -659,10 +669,15 @@ void BppROS::computePalletFP(bpp_actor::Actor &pallet, std::vector<bpp_actor::Ac
 
         //*********************************************************************************************************
 
-        std::cout << "re implement the commeneted conde in the file below " << std::endl;
+        QQuaternion q(box.targetPoseVec[0].orientation.w, box.targetPoseVec[0].orientation.x,box.targetPoseVec[0].orientation.y, box.targetPoseVec[0].orientation.z);
+        float pitch, yaw, roll;
+        q.getEulerAngles(&pitch, &yaw, &roll);
+        eu(0)=roll;eu(1)=pitch;eu(2)=yaw;
 
-        std::cout << __FILE__ << " " << __LINE__ << std::endl;
-        throw;
+        //        std::cout << "re implement the commeneted conde in the file below " << std::endl;
+
+        //        std::cout << __FILE__ << " " << __LINE__ << std::endl;
+        //        throw;
 
         if( floatEqual(std::fabs(eu(2)), M_PI_2))  // if the box desired is rotated(90 or -90)
         {

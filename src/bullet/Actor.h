@@ -248,18 +248,43 @@ inline void 	poseMsgToEigen (const geometry_msgs::Pose &m, Eigen::Affine3d &e){
 }
 
 inline void 	poseEigenToMsg (const Eigen::Affine3d &e, geometry_msgs::Pose &m){
-    std::cout << "poseEigenToMsg not yet implemented" << std::endl;
-    throw;
+
+    m.position.x = e.translation()[0];
+    m.position.y = e.translation()[1];
+    m.position.z = e.translation()[2];
+    Eigen::Quaterniond q = (Eigen::Quaterniond)e.linear();
+    m.orientation.x = q.x();
+    m.orientation.y = q.y();
+    m.orientation.z = q.z();
+    m.orientation.w = q.w();
+    if (m.orientation.w < 0) {
+        m.orientation.x *= -1;
+        m.orientation.y *= -1;
+        m.orientation.z *= -1;
+        m.orientation.w *= -1;
+    }
+
+    //    std::cout << "poseEigenToMsg not yet implemented" << std::endl;
+    //    throw;
 }
 
 inline void 	pointMsgToEigen (const geometry_msgs::Point &m, Eigen::Vector3d &e){
-    std::cout << "pointMsgToEigen not yet implemented" << std::endl;
-    throw;
+
+    e(0) = m.x;
+    e(1) = m.y;
+    e(2) = m.z;
+    //    std::cout << "pointMsgToEigen not yet implemented" << std::endl;
+    //    throw;
 }
 
 inline void 	pointEigenToMsg (const Eigen::Vector3d &e, geometry_msgs::Point &m){
-    std::cout << "pointEigenToMsg not yet implemented" << std::endl;
-    throw;
+
+    m.x = e(0);
+    m.y = e(1);
+    m.z = e(2);
+
+    //    std::cout << "pointEigenToMsg not yet implemented" << std::endl;
+    //    throw;
 }
 
 inline void quaternionMsgToTF (const geometry_msgs::Quaternion &msg, Quaternion &bt){
@@ -273,6 +298,22 @@ inline void quaternionMsgToTF (const geometry_msgs::Quaternion &msg, Quaternion 
     //    std::cout << "quaternionMsgToTF not yet implemented" << std::endl;
     //    throw;
 }
+
+static inline void quaternionTFToMsg(const Quaternion& bt, geometry_msgs::Quaternion& msg)
+{
+    if (fabs(bt.length2() - 1 ) > QUATERNION_TOLERANCE)
+    {
+        std::cout << "TF to MSG: Quaternion Not Properly Normalized" << std::endl;
+        Quaternion bt_temp = bt;
+        bt_temp.normalize();
+        msg.x = bt_temp.x(); msg.y = bt_temp.y(); msg.z = bt_temp.z();  msg.w = bt_temp.w();
+    }
+    else
+    {
+        msg.x = bt.x(); msg.y = bt.y(); msg.z = bt.z();  msg.w = bt.w();
+    }
+};
+
 };
 
 namespace gui_msgs{

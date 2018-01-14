@@ -7,6 +7,7 @@
 #include <bullet/Actor.h>
 #include <bpa/bpp_functions.h>
 #include <bpa/pp_functions.h>
+#include <QQuaternion>
 
 #include <jsoncpp/json/json.h>
 #include <jsoncpp/json/writer.h>
